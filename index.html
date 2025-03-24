@@ -10,7 +10,12 @@
       const params = new URLSearchParams(window.location.search);
       const redirectPath = params.get('path');
       if (redirectPath) {
-        window.history.replaceState({}, '', redirectPath);
+        try {
+          const decodedPath = decodeURIComponent(redirectPath);
+          window.history.replaceState({}, '', decodedPath);
+        } catch (e) {
+          console.error('Error handling redirect:', e);
+        }
       }
     </script>
   </head>

@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      // Get the current path
-      const path = window.location.pathname;
+      // Get the current path and encode it
+      const path = encodeURIComponent(window.location.pathname);
       // Redirect to the main page with the current path as a parameter
       window.location.href = '/identity_element/?' + path;
     </script>
