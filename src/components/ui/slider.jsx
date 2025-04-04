@@ -113,12 +113,21 @@ const Slider = React.forwardRef(({ className, value, onValueChange, min = 0, max
       step={step}
       {...props}
     >
-      <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-slate-100">
-        <SliderPrimitive.Range className="absolute h-full bg-[rgba(178, 174, 255, 0.8)]" style={{ width: percentage }} />
+      <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-slate-100 px-2">
+        <SliderPrimitive.Range 
+          className="absolute h-full bg-[rgba(178, 174, 255, 0.8)]" 
+          style={{ 
+            width: `calc(${percentage} + 8px)`,
+            left: '-8px'
+          }} 
+        />
       </SliderPrimitive.Track>
       <SliderPrimitive.Thumb 
         className="absolute block h-5 w-5 rounded-full border-2 border-[rgba(87,80,227,0.8)] bg-white ring-offset-white transition-colors focus-visible:outline-none" 
-        style={{ left: percentage, transform: "translateX(-50%)" }}
+        style={{ 
+          left: `clamp(8px, calc(${percentage} + 8px), calc(100% - 8px))`, 
+          transform: "translateX(-50%)"
+        }}
       />
     </SliderPrimitive.Root>
   );
