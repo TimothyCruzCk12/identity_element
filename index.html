@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/identity_element/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identity Element Interactive</title>
+    <script>
+      // Handle redirect from 404.html
+      const params = new URLSearchParams(window.location.search);
+      const redirectPath = params.get('path');
+      if (redirectPath) {
+        try {
+          const decodedPath = decodeURIComponent(redirectPath);
+          window.history.replaceState({}, '', decodedPath);
+        } catch (e) {
+          console.error('Error handling redirect:', e);
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="/identity_element/assets/index-D1K9D4tM.js"></script>
+    <link rel="stylesheet" crossorigin href="/identity_element/assets/index-CA7mJ904.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
