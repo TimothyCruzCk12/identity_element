@@ -5,7 +5,7 @@ const IdentityPropertiesInteractive = () => {
   const [number, setNumber] = useState(5);
 
   return (
-    <div className="w-full max-w-md mx-auto shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-2px_rgba(0,0,0,0.1)] bg-white rounded-lg overflow-hidden">
+    <div className="w-full max-w-md mx-auto mt-5 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-2px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.05)] bg-white rounded-lg overflow-hidden">
       <div className="p-3 space-y-3">
         <div className="space-y-2">
           <div className="flex flex-col space-y-1">
